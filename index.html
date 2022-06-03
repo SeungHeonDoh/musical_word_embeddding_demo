@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charSet="UTF-8" />
+        <title>SeungHeon Doh | MIR, ML/DL Researcher</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎹</text></svg>"></link>
+        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="robots" content="index, follow, noodp" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="google" content="notranslate" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>SeungHeonDoh</title>
+    </head>
+    <style>
+        header{        
+            padding-top: 1.91rem;
+        }
+        header a{
+            color: gray !important;
+            text-decoration: none;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "helvetica";
+            margin-bottom: 1.01rem;
+        }
+
+        p{
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        h1 {
+            font-size: 5rem;
+            line-height: 1.15;
+            }
+
+        h2 {
+            font-size: 4rem;
+            line-height: 1.11;
+        }
+
+        h3 {
+            font-size: 2rem;
+            line-height: 1.74;
+        }
+
+        h4 {
+            font-size: 1.4rem;
+            line-height: 1.39;
+        }
+
+        h5 {
+            font-size: 1.2rem;
+            line-height: 1.56;
+            margin-bottom: 0.5em;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            line-height: 1.56;
+            margin-bottom: 1.01rem;
+        }
+
+        .main table {
+            display: inline-table;
+        }
+        table {
+            table-layout:fixed;
+            width: 100%;
+            overflow: hidden;
+        }
+        #player{
+            width: 100%;
+        }
+        img, svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .blog_contents{
+            margin-bottom: 1rem;
+        }
+
+        .footer{
+            height: 50px;
+            background-color: white;
+        }
+
+        .wrapper {
+            max-width: 1920px;
+            margin: auto;
+            padding-left: 20rem;
+            padding-right: 20rem;
+            }
+        @media(max-width: 1700px){
+            .wrapper {
+                padding-left: 8rem;
+                padding-right: 8rem;
+            }
+            }
+
+        @media(max-width: 1199px){
+            .wrapper {
+            padding-left: 5rem;
+            padding-right: 5rem;
+            }
+        }
+
+        @media(max-width: 575px){
+            .wrapper {
+            padding-left: 1.25rem;
+            padding-right: 1.25rem;
+            }
+        }
+    </style>
+
+    <body style="background-color: #f8f8f8;">
+        <header id="header" class="site-header">
+            <div class="wrapper">
+                <a 
+                    title="nav"
+                    class="btn btn-link transform-scale-h border-0 p-0"
+                    href="https://seungheondoh.github.io/#/">Home</a>
+            </div>
+        </header>
+    
+        <main id="main" class="site-main">
+            <div class="wrapper">
+                <h3>Musical Word Embedding for Music Annotation and Retrieval</h3>
+                    <pre><code>IEEE MM (submitted) - SeungHeon Doh, Jongpil Lee, Dasaem Jeong, Juhan Nam
+                    </code></pre>
+            <!-- <p>This project maps <strong>langauge</strong> and <strong>music</strong> to the same embedding space and supports music item search for speech query by calculating the similarity between them.
+            The detail of the methodology for building the dataset please refer to our paper.</p> -->
+            <ul>
+                <li>Paper on Arxiv (will be updated)</li>
+                <li><a href="#">Implementation Code</a></li>
+                <li>Pre-trained embedding vectors on Zenodo (will be updated)</li>
+            </ul>
+            <h4>Abstract</h4>
+                <p>In this paper, we investigate the word embedding for music auto-tagging in a systematic manner by using a wide spectrum of text corpus from general to music-specific words and defining musical specificity of the corpus as a measure of how the semantics of words is specific to the songs or far from it. 
+                    Figure illustrates the spectrum of words distributed on the axis of musical specificity from general to specific words. Using different combinations of corpus with low to high specificity, we train the musical word embedding and evaluate the embedding space with the tag rank prediction task on both seen and unseen tag datasets. 
+                    In addition, we integrate the musical word embedding into a zero-shot learning framework and examine various setups of supervision between audio and words. We compare the supervision setups by evaluating the music annotation and retrieval performance on both seen and unseen datasets. Finally, we show that the zero-shot learning model jointly supervised by tags, artist ID, and track ID via the musical word embedding outperforms the previous work based on general word embedding. 
+                </p>
+            <img class="blog_contents" src="assets/img/main.png" alt="musical_word_embedding"/>
+
+
+            <h4>Visualization</h4>
+            <p>
+                In the comparison of different word embedding space, general corpus word embedding tend to overlap different emotion clusters (Figure-(a,b,c)). For example, the embedding vectors of `country' and `club', which are different music listening contexts, are located close together. On the other hand, music corpus embedding trained show strong cohesion between words of similar semantic (Figure-(d,e)). It's worth noting that balanced corpus word embedding comprehend the music listening context while preserving a large vocabulary capacity (Figure-(e)).
+                In the case of the audio-word embedding space, due to space constraints, we only visualize embeddings trained using the general semantic GloVe embedding and balanced semantic Musical Word Embedding (MWE). There were no or very few tracks annotated with `relex', `chill', `lofi', `romantic', `inlove', `intimate'. The tracks related to `electronic', `house', `club', `workout' and `country', `folk', `cowboy' are activated by color. When comparing the joint embedding space model using tag supervision, MWE-audio joint embeding space showed strong cohesion with respect to listening context words such as `club' or `workout' than GloVe-audio joint embeding space. Also, if we compare the different supervisions, the artist and track supervision show strong cohesion for unseen words such as `cowboy' than tag supervision. This shows that joint embedding space trained with strong musical specificity using artist and track supervision has better generalization than tag supervision.
+
+            </p>
+            <img class="blog_contents" src="assets/img/viz.png" alt="viz"/> 
+            
+            <h4>Multi Query Retrieval Demo</h4>
+                <p> We report the results for MSD, which are datsets reported in the paper. The samples below were extracted based on the <a href='#'>code</a>.</p>
+                <table>
+                    <tr>
+                        <th> Query Text </th>
+                        <th> Similar Music 1 </th>
+                        <th> Similar Music 2 </th>
+                        <th> Similar Music 3 </th>
+                    </tr>
+                    <tr> 
+                        <th> deep house in miami ocean </th>
+                        <th> <audio controls id="player" onplay="pauseOthers(this);"><source src="assets/audios/deephouse/deephouse.mp3" type="audio/mpeg"></audio> </th>
+                        <th> <audio controls id="player" onplay="pauseOthers(this);"><source src="assets/audios/deephouse/deephouse (1).mp3" type="audio/mpeg"></audio> </th>
+                        <th> <audio controls id="player" onplay="pauseOthers(this);"><source src="assets/audios/deephouse/deephouse (2).mp3" type="audio/mpeg"></audio> </th>
+                    </tr>
+                    <tr> 
+                        <th> aggressive workout </th>
+                        <th> <audio controls id="player" onplay="pauseOthers(this);"><source src="assets/audios/aggressive_workout/aggressive_workout.mp3" type="audio/mpeg"></audio> </th>
+                        <th> <audio controls id="player" onplay="pauseOthers(this);"><source src="assets/audios/aggressive_workout/aggressive_workout (1).mp3" type="audio/mpeg"></audio> </th>
+                        <th> <audio controls id="player" onplay="pauseOthers(this);"><source src="assets/audios/aggressive_workout/aggressive_workout (2).mp3" type="audio/mpeg"></audio> </th>
+                    </tr>
+                    <tr> 
+                        <th> meditation in forest </th>
+                        <th> <audio controls id="player" onplay="pauseOthers(this);"><source src="assets/audios/meditation_forest/meditation_forest.mp3" type="audio/mpeg"></audio> </th>
+                        <th> <audio controls id="player" onplay="pauseOthers(this);"><source src="assets/audios/meditation_forest/meditation_forest (1).mp3" type="audio/mpeg"></audio> </th>
+                        <th> <audio controls id="player" onplay="pauseOthers(this);"><source src="assets/audios/meditation_forest/meditation_forest (2).mp3" type="audio/mpeg"></audio> </th>
+                    </tr>
+                    <tr> 
+                        <th> cozy summer breeze </th>
+                        <th> <audio controls id="player" onplay="pauseOthers(this);"><source src="assets/audios/cozy_summer_breeze/cozy_summer_breeze.mp3" type="audio/mpeg"></audio> </th>
+                        <th> <audio controls id="player" onplay="pauseOthers(this);"><source src="assets/audios/cozy_summer_breeze/cozy_summer_breeze (1).mp3" type="audio/mpeg"></audio> </th>
+                        <th> <audio controls id="player" onplay="pauseOthers(this);"><source src="assets/audios/cozy_summer_breeze/cozy_summer_breeze (2).mp3" type="audio/mpeg"></audio> </th>
+                    </tr>
+                </table>
+            <h4>Zeroshot Annotation Results</h4>
+            <p>We share the annotation results for both classic and new songs. We can see that the results are reasonable even if we did not use seen tags in both musical and contextual domains. The <b>unseen</b> means a tag not using in the training stage. </p>
+
+            <table class="VA-example" style="width:100%" cellspacing="0" cellpadding="0">
+                <tbody><tr>
+                  <td style="text-align: center; vertical-align: middle;">Smells like teen spirit-Nirvana</td>
+                  <td style="text-align: center; vertical-align: middle;">Dynamite-BTS</td>
+                </tr>
+                <tr>
+                <td style="text-align: center; vertical-align: middle;">
+                    <audio controls controlsList="nodownload" id="player" onplay="pauseOthers(this);"><source src="assets/demo/demo1.mp3" type="audio/mpeg"></audio>
+                  <figcaption><strong>Q2</strong></figcaption>
+                </td>
+                <td style="text-align: center; vertical-align: middle;">
+                    <audio controls controlsList="nodownload" id="player" onplay="pauseOthers(this);"><source src="assets/demo/demo2.mp3" type="audio/mpeg"></audio>
+                  </iframe>
+                <figcaption><strong>Q1</strong></figcaption>
+                </td>
+                </tr>
+              </tbody></table>
+            <div style="text-align: center;">
+                <img class="blog_contents" src="assets/img/annotation.png" alt="annotation" width="70%"/> 
+            </div>
+
+            <h4>Query Recommendation</h4>
+            <p>Table shows several examples of query recommendation results. 
+                For example, given word `club' as a search query, users can substitute or enhance the query with more specific genre words such as `house', `club jazz', or `club house'. 
+                This recommendation performance is outperformed when the listening context and musical semantics are well blended. For the `summer' query, similar seasons such as `winter', `spring', `autumn' are recommended in the word embedding trained from general corpus, such as CommonCrawl, Wikipedia. 
+                On the other hand, in the case of word embedding trained from musical corpus, recommended tags are `happy', `bright, `fun'. This trend is also seen in `chill' query. Although `chill' and `cool' have similar meanings in the dictionary, they have a completely different atmosphere musically.</p>
+            <img class="blog_contents" src="assets/img/query_recom.png" alt="query_recom"/> 
+                
+        </main>
+        <div class="footer"></div>
+            </div>
+    </body>
+</html>
