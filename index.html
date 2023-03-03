@@ -129,20 +129,18 @@
     
         <main id="main" class="site-main">
             <div class="wrapper">
-                <h3>Musical Word Embedding for Music Annotation and Retrieval</h3>
-                    <pre><code>IEEE MM (submitted) - SeungHeon Doh, Jongpil Lee, Dasaem Jeong, Juhan Nam
+                <h3>Musical Word Embedding for Music Tagging and Retrieval</h3>
+                    <pre><code>IEEE Transactions on Multimedia (submitted) - SeungHeon Doh, Jongpil Lee, Dasaem Jeong, Juhan Nam
                     </code></pre>
             <!-- <p>This project maps <strong>langauge</strong> and <strong>music</strong> to the same embedding space and supports music item search for speech query by calculating the similarity between them.
             The detail of the methodology for building the dataset please refer to our paper.</p> -->
             <ul>
                 <li>Paper on Arxiv (will be updated)</li>
-                <li><a href="#">Implementation Code</a></li>
+                <li>Implementation Code</a></li>
                 <li>Pre-trained embedding vectors on Zenodo (will be updated)</li>
             </ul>
             <h4>Abstract</h4>
-                <p>In this paper, we investigate the word embedding for music auto-tagging in a systematic manner by using a wide spectrum of text corpus from general to music-specific words and defining musical specificity of the corpus as a measure of how the semantics of words is specific to the songs or far from it. 
-                    Figure illustrates the spectrum of words distributed on the axis of musical specificity from general to specific words. Using different combinations of corpus with low to high specificity, we train the musical word embedding and evaluate the embedding space with the tag rank prediction task on both seen and unseen tag datasets. 
-                    In addition, we integrate the musical word embedding into a zero-shot learning framework and examine various setups of supervision between audio and words. We compare the supervision setups by evaluating the music annotation and retrieval performance on both seen and unseen datasets. Finally, we show that the zero-shot learning model jointly supervised by tags, artist ID, and track ID via the musical word embedding outperforms the previous work based on general word embedding. 
+                <p>Word embeddings have become an essential means for text-based information retrieval. Traditionally, word embeddings are learned from large quantities of general and unstructured text data. However, in the domain of music, traditional embeddings can struggle with semantic understanding in musical contexts or identifying music-related entities such as artists and tracks. To address this issue, we propose a new approach called Musical Word Embedding (MWE), which is learned using a broad spectrum of text corpora, ranging from general to music-specific words.  
                 </p>
             <img class="blog_contents" src="assets/img/main.png" alt="musical_word_embedding"/>
 
@@ -156,7 +154,7 @@
             <img class="blog_contents" src="assets/img/viz.png" alt="viz"/> 
             
             <h4>Multi Query Retrieval Demo</h4>
-                <p> We report the results for MSD, which are datsets reported in the paper. The samples below were extracted based on the <a href='#'>code</a>.</p>
+                <p> We report the results for MSD, which are datsets reported in the paper.</p>
                 <table>
                     <tr>
                         <th> Query Text </th>
